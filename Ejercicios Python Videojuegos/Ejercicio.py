@@ -53,7 +53,7 @@ doSalto = [pygame.image.load('img zombie/Jump1.png'),
 x = 0
 px = 50
 py = 50
-ancho = 40
+aancho = 40
 velocidad = 10
 
 # Control de FPS
@@ -126,7 +126,7 @@ while ejecuta:
         derecha = False
 
     # Tecla D o Tecla 6 - Movimiento a la derecha
-    elif (keys[pygame.K_d] or keys[pygame.K_KP6] or keys[pygame.K_RIGHT]) and px < 900 - velocidad - ancho:
+    elif (keys[pygame.K_d] or keys[pygame.K_KP6] or keys[pygame.K_RIGHT]) and px < 900 - velocidad - aancho:
         px += velocidad
         izquierda = False
         derecha = True

@@ -51,7 +51,7 @@ salta = [pygame.image.load('img zombie/Jump1.png'),
 # Variables de posición y movimiento del personaje
 x = 0
 px = 50
-py = 290
+py = 50
 ancho = 40
 velocidad = 3
 
