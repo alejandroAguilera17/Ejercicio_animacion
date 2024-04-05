@@ -4,14 +4,14 @@ import pygame
 pygame.init()
 
 # Pantalla - ventana
-W, H = 860, 484
+W, H = 1024, 461
 PANTALLA = pygame.display.set_mode((W, H))
 pygame.display.set_caption('Ejercicio animación zombie')
 icono=pygame.image.load('icono zombie.png')
 pygame.display.set_icon(icono)
 
 # Fondo del juego
-fondo = pygame.image.load('bosque.jpeg')
+fondo = pygame.image.load('fondo_zombie.jpg')
 
 # Carga de imagen para personaje posición quieto
 quieto = pygame.image.load('img zombie/idle1.png')

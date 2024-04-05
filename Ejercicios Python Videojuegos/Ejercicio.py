@@ -4,14 +4,14 @@ import pygame
 pygame.init()
 
 # ventana
-ancho, alto= 980, 980
+ancho, alto= 1024, 461
 ventana= pygame.display.set_mode((ancho, alto))
 pygame.display.set_caption('Ejercicio Animación Zombie')
 icono=pygame.image.load('icono zombie.png')
 pygame.display.set_icon(icono)
 
 # fondo
-fondo = pygame.image.load('fondo3.jpg')
+fondo = pygame.image.load('fondo_zombie.jpg')
 
 # personaje quieto
 personajeQuieto = pygame.image.load('img zombie/idle1.png')
@@ -52,25 +52,24 @@ salto = [pygame.image.load('img zombie/Jump1.png'),
 # Variables de posición y movimiento del personaje
 x = 0
 px = 50
-py = 290
+py = 50
 ancho = 40
 velocidad = 10
 
 # Control de FPS
 reloj = pygame.time.Clock()
 
-
+salto = False
 # Contador de salto inicializar
 
 cuentaSalto = 8 #Controlar la altura y la duración del salto del personaje
-cuentaPasos = 0
 
 # Variables de inicio
 
-salto = False
 izquierda = False
 derecha = False
 
+cuentaPasos = 0
 
 # Variables globales
 def recarga_ventana():
@@ -109,7 +108,7 @@ ejecuta = True
 while ejecuta:
         
     # FPS
-    reloj.tick(15)
+    reloj.tick(18)
 
     #bucle
     for event in pygame.event.get():
@@ -150,7 +149,7 @@ while ejecuta:
 
     # Tecla SPACE o Tecla 8 - Salto
     if not salto:
-        if keys[pygame.K_SPACE] or keys[pygame.K_KP8] or keys[pygame.K_UP]:
+        if keys[pygame.K_SPACE]:
             salto = True
             izquierda = False
             derecha = False
