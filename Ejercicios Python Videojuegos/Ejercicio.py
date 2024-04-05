@@ -17,7 +17,7 @@ fondo = pygame.image.load('fondo_zombie.jpg')
 personajeQuieto = pygame.image.load('img zombie/idle1.png')
 
 # personaje camina hacia la derecha
-derecha = [pygame.image.load('img zombie/Run1_derecha.png'),
+goDerecha = [pygame.image.load('img zombie/Run1_derecha.png'),
 		   pygame.image.load('img zombie/Run2_derecha.png'),
 		   pygame.image.load('img zombie/Run3_derecha.png'),
 		   pygame.image.load('img zombie/Run4_derecha.png'),
@@ -29,7 +29,7 @@ derecha = [pygame.image.load('img zombie/Run1_derecha.png'),
 		   pygame.image.load('img zombie/Run10_derecha.png'),]
 
 # personaje camina hacia la izquierda
-izquierda = [pygame.image.load('img zombie/Run1_izquierda.png'),
+goIzquierda = [pygame.image.load('img zombie/Run1_izquierda.png'),
 		   pygame.image.load('img zombie/Run2_izquierda.png'),
 		   pygame.image.load('img zombie/Run3_izquierda.png'),
 		   pygame.image.load('img zombie/Run4_izquierda.png'),
@@ -41,7 +41,7 @@ izquierda = [pygame.image.load('img zombie/Run1_izquierda.png'),
 		   pygame.image.load('img zombie/Run10_izquierda.png'),]
 
 # personaje salta
-salto = [pygame.image.load('img zombie/Jump1.png'),
+doSalto = [pygame.image.load('img zombie/Jump1.png'),
 		   pygame.image.load('img zombie/Jump2.png'),
 		   pygame.image.load('img zombie/Jump3.png'),
 		   pygame.image.load('img zombie/Jump4.png'),
@@ -88,16 +88,16 @@ def recarga_ventana():
 		cuentaPasos = 0
 	# Si Movimiento a la izquierda muestra animaciones
 	if izquierda:
-		ventana.blit(izquierda[cuentaPasos // 1], (int(px), int(py)))
+		ventana.blit(goIzquierda[cuentaPasos // 1], (int(px), int(py)))
 		cuentaPasos += 1
 
 		# Si Movimiento a la derecha, muestra animaciones
 	elif derecha:
-		ventana.blit(derecha[cuentaPasos // 1], (int(px), int(py)))
+		ventana.blit(goDerecha[cuentaPasos // 1], (int(px), int(py)))
 		cuentaPasos += 1
 
 	elif salto + 1 >= 8:
-		ventana.blit(salto[cuentaPasos // 1], (int(px), int(py)))
+		ventana.blit(doSalto[cuentaPasos // 1], (int(px), int(py)))
 		cuentaPasos += 1
 
 	else:
