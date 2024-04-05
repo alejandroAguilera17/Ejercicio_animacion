@@ -9,50 +9,51 @@ ventana= pygame.display.set_mode((ancho, alto))
 pygame.display.set_caption('Ejercicio Animación Zombie')
 icono=pygame.image.load('icono zombie.png')
 pygame.display.set_icon(icono)
-
+nuevo_ancho = 150
+nuevo_alto = 280
 # fondo
 fondo = pygame.image.load('fondo_zombie.jpg')
 
 # personaje quieto
-personajeQuieto = pygame.image.load('img zombie/idle1.png')
+personajeQuieto = pygame.transform.scale(pygame.image.load('img zombie/idle1.png'), (nuevo_ancho, nuevo_alto))
 
 # personaje camina hacia la derecha
-goDerecha = [pygame.image.load('img zombie/Run1_derecha.png'),
-		   pygame.image.load('img zombie/Run2_derecha.png'),
-		   pygame.image.load('img zombie/Run3_derecha.png'),
-		   pygame.image.load('img zombie/Run4_derecha.png'),
-		   pygame.image.load('img zombie/Run5_derecha.png'),
-		   pygame.image.load('img zombie/Run6_derecha.png'),
-		   pygame.image.load('img zombie/Run7_derecha.png'),
-		   pygame.image.load('img zombie/Run8_derecha.png'),
-		   pygame.image.load('img zombie/Run9_derecha.png'),
-		   pygame.image.load('img zombie/Run10_derecha.png'),]
+goDerecha =[pygame.transform.scale(pygame.image.load('img zombie/Run1_derecha.png'), (nuevo_ancho, nuevo_alto)),
+           pygame.transform.scale(pygame.image.load('img zombie/Run2_derecha.png'), (nuevo_ancho, nuevo_alto)),
+           pygame.transform.scale(pygame.image.load('img zombie/Run3_derecha.png'), (nuevo_ancho, nuevo_alto)),
+           pygame.transform.scale(pygame.image.load('img zombie/Run4_derecha.png'), (nuevo_ancho, nuevo_alto)),
+           pygame.transform.scale(pygame.image.load('img zombie/Run5_derecha.png'), (nuevo_ancho, nuevo_alto)),
+           pygame.transform.scale(pygame.image.load('img zombie/Run6_derecha.png'), (nuevo_ancho, nuevo_alto)),
+           pygame.transform.scale(pygame.image.load('img zombie/Run7_derecha.png'), (nuevo_ancho, nuevo_alto)),
+           pygame.transform.scale(pygame.image.load('img zombie/Run8_derecha.png'), (nuevo_ancho, nuevo_alto)),
+           pygame.transform.scale(pygame.image.load('img zombie/Run9_derecha.png'), (nuevo_ancho, nuevo_alto)),
+           pygame.transform.scale(pygame.image.load('img zombie/Run10_derecha.png'), (nuevo_ancho, nuevo_alto))]
 
 # personaje camina hacia la izquierda
-goIzquierda = [pygame.image.load('img zombie/Run1_izquierda.png'),
-		   pygame.image.load('img zombie/Run2_izquierda.png'),
-		   pygame.image.load('img zombie/Run3_izquierda.png'),
-		   pygame.image.load('img zombie/Run4_izquierda.png'),
-		   pygame.image.load('img zombie/Run5_izquierda.png'),
-		   pygame.image.load('img zombie/Run6_izquierda.png'),
-		   pygame.image.load('img zombie/Run7_izquierda.png'),
-		   pygame.image.load('img zombie/Run8_izquierda.png'),
-		   pygame.image.load('img zombie/Run9_izquierda.png'),
-		   pygame.image.load('img zombie/Run10_izquierda.png'),]
+goIzquierda = [pygame.transform.scale(pygame.image.load('img zombie/Run1_izquierda.png'), (nuevo_ancho, nuevo_alto)),
+             pygame.transform.scale(pygame.image.load('img zombie/Run2_izquierda.png'), (nuevo_ancho, nuevo_alto)),
+             pygame.transform.scale(pygame.image.load('img zombie/Run3_izquierda.png'), (nuevo_ancho, nuevo_alto)),
+             pygame.transform.scale(pygame.image.load('img zombie/Run4_izquierda.png'), (nuevo_ancho, nuevo_alto)),
+             pygame.transform.scale(pygame.image.load('img zombie/Run5_izquierda.png'), (nuevo_ancho, nuevo_alto)),
+             pygame.transform.scale(pygame.image.load('img zombie/Run6_izquierda.png'), (nuevo_ancho, nuevo_alto)),
+             pygame.transform.scale(pygame.image.load('img zombie/Run7_izquierda.png'), (nuevo_ancho, nuevo_alto)),
+             pygame.transform.scale(pygame.image.load('img zombie/Run8_izquierda.png'), (nuevo_ancho, nuevo_alto)),
+             pygame.transform.scale(pygame.image.load('img zombie/Run9_izquierda.png'), (nuevo_ancho, nuevo_alto)),
+             pygame.transform.scale(pygame.image.load('img zombie/Run10_izquierda.png'), (nuevo_ancho, nuevo_alto))]
 
 # personaje salta
-doSalto = [pygame.image.load('img zombie/Jump1.png'),
-		   pygame.image.load('img zombie/Jump2.png'),
-		   pygame.image.load('img zombie/Jump3.png'),
-		   pygame.image.load('img zombie/Jump4.png'),
-		   pygame.image.load('img zombie/Jump5.png'),
-		   pygame.image.load('img zombie/Jump6.png'),
-		   pygame.image.load('img zombie/Jump7.png'),]
+doSalto = [pygame.transform.scale(pygame.image.load('img zombie/Jump1.png'), (nuevo_ancho, nuevo_alto)),
+         pygame.transform.scale(pygame.image.load('img zombie/Jump2.png'), (nuevo_ancho, nuevo_alto)),
+         pygame.transform.scale(pygame.image.load('img zombie/Jump3.png'), (nuevo_ancho, nuevo_alto)),
+         pygame.transform.scale(pygame.image.load('img zombie/Jump4.png'), (nuevo_ancho, nuevo_alto)),
+         pygame.transform.scale(pygame.image.load('img zombie/Jump5.png'), (nuevo_ancho, nuevo_alto)),
+         pygame.transform.scale(pygame.image.load('img zombie/Jump6.png'), (nuevo_ancho, nuevo_alto)),
+         pygame.transform.scale(pygame.image.load('img zombie/Jump7.png'), (nuevo_ancho, nuevo_alto))]
 
 # Variables de posición y movimiento del personaje
 x = 0
 px = 50
-py = 50
+py = 180
 aancho = 40
 velocidad = 10
 
@@ -132,14 +133,7 @@ while ejecuta:
         derecha = True
 
 
-    # Tecla W - Movimiento hacia arriba
-    if keys[pygame.K_w] or keys[pygame.K_UP] and py > 100:
-        py -= velocidad
 
-
-    # Tecla S o Tecla 2 - Movimiento hacia abajo
-    if keys[pygame.K_s] or keys[pygame.K_DOWN] and py < 300:
-        py += velocidad
 
     # personaje quieto
     else:
